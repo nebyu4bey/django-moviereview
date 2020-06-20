@@ -1,0 +1,23 @@
+{%extends 'main/base.html'%}
+
+{% block content%}
+<di class="container">
+    <br>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4">
+              <img src="{{movie.image}}" alt="{{movie.name}}" class="img-fluid" width="70%" >
+            </div>
+            <div class="col-md-8">
+                <h3>{{movie.name}}</h3>
+                <p>{{movie.description}}</p>
+                <h5>{{movie.release_date}}</h5>
+                <h5>{{movie.rating}}</h5>
+                <a href="{% url 'main:edit_movie' movie.id %}" class="btn btn-warning">Edit movie</a>
+                <a href="{% url 'main:delete_movie' movie.id %}" class="btn btn-danger">Delete movie</a>
+            </div>
+        </div>
+    </div>
+        
+</di>
+{%endblock%}
